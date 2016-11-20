@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #000000;margin: 50px auto;display: block" height="800" width="800" >
+    浏览器不支持canvas！
+</canvas>
+</body>
+<script>
+
+    window.onload=function () {
+        var canvas= document.getElementById("canvas");
+        var context=canvas.getContext('2d');
+
+        drawRoundRect(context,0,0,300,300,30);
+
+    }
+
+    function drawRoundRect(cxt,x,y,width,height,radius) {
+        cxt.save();
+        cxt.translate(x,y);
+        pathRoundRect(cxt,width,height,radius);
+        cxt.strokeStyle='black';
+        cxt.stroke();
+        cxt.restore();
+    }
+    function pathRoundRect(cxt,width,height,radius) {
+        cxt.beginPath();
+        cxt.arc(width-radius,height-radius,radius,0,Math.PI/2)
+        cxt.closePath();
+    }
+
+
+
+
+</script>
+</html>

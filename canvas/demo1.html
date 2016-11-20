@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+        当前浏览器不支持canvas！
+    </canvas>
+</body>
+    <script>
+        window.onload=function () {
+            var canvas=document.getElementById("canvas");
+//            canvas.width=1024;
+//            canvas.height=768;
+            var context=canvas.getContext("2d")
+            //使用context绘制
+//            if(canvas.getContext("2d")){
+//                var context=canvas.getContext("2d")
+//                //使用context绘制
+//            }
+//            else {
+//                alert("当前浏览器不支持canvas！")
+//            }
+
+            context.beginPath();
+            context.moveTo(100,100);
+            context.lineTo(700,700);
+            context.lineTo(100,700);
+            context.lineTo(100,100);
+            context.closePath();
+
+            context.lineWidth=5;
+            context.strokeStyle="#005588";
+            context.stroke();
+
+            context.fillStyle="red";
+            context.fill()
+
+            context.beginPath();
+            context.moveTo(200,100);
+            context.lineTo(700,700);
+            context.lineTo(100,700);
+            context.lineTo(200,100);
+            context.closePath();
+
+            context.lineWidth=5;
+            context.strokeStyle="red";
+            context.stroke();
+
+
+        }
+    </script>
+</html>

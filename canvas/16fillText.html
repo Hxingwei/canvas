@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #000000;margin: 50px auto;display: block" height="800" width="800" >
+    浏览器不支持canvas！
+</canvas>
+</body>
+<script>
+
+    window.onload=function () {
+        var canvas= document.getElementById("canvas");
+        var context=canvas.getContext('2d');
+
+        context.font='bold 40px Arial';
+
+        context.fillStyle='#058';
+        context.fillText('学习Canvas!学习Canvas!',40,100)
+
+        context.lineWidth=1;
+        context.strokeStyle='red';
+        context.strokeText('学习Canvas!学习Canvas!',40,200)
+
+
+        var linearGrad=context.createLinearGradient(0,0,400,0);
+        linearGrad.addColorStop(0.0,'blue');
+        linearGrad.addColorStop(0.5,'red');
+        linearGrad.addColorStop(1.0,'blue');
+
+        context.fillStyle=linearGrad;
+        context.strokeStyle=linearGrad;
+        context.fillText('学习Canvas!学习Canvas!',40,300,400)
+        context.strokeText('学习Canvas!学习Canvas!学习Canvas!学习Canvas!',40,400,400)
+
+
+
+    }
+
+
+
+
+
+</script>
+</html>

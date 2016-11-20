@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa;display: block;margin: 50px auto">
+    当前浏览器不支持canvas！
+    <p>ssssss</p>
+</canvas>
+</body>
+<script>
+    window.onload=function () {
+        var canvas=document.getElementById("canvas");
+//            canvas.width=1024;
+//            canvas.height=768;
+        var context=canvas.getContext("2d")
+        //使用context绘制
+//            if(canvas.getContext("2d")){
+//                var context=canvas.getContext("2d")
+//                //使用context绘制
+//            }
+//            else {
+//                alert("当前浏览器不支持canvas！")
+//            }
+
+        context.lineWidth=5;
+//        context.strokeStyle="red";
+        context.fillStyle="red";
+        context.arc(300,300,100,0,1.5*Math.PI);
+        context.stroke();
+        context.fill();
+        context.font="20px";
+        var gradient=context.createLinearGradient(0,0,canvas.width,0);
+        gradient.addColorStop("0","magenta");
+        gradient.addColorStop("0.5","blue");
+        gradient.addColorStop("1.0","red");
+        context.fillStyle=gradient
+        context.fillText("HAHAHAHAHAHAH",100,100);
+    }
+</script>
+</html>
